@@ -1,8 +1,15 @@
 import 'package:coorg/onboading_screen.dart';
 import 'package:flutter/material.dart';
 
-class AfterSplashScreen extends StatelessWidget {
+class AfterSplashScreen extends StatefulWidget {
   const AfterSplashScreen({Key? key}) : super(key: key);
+
+  @override
+  State<AfterSplashScreen> createState() => _AfterSplashScreenState();
+}
+
+class _AfterSplashScreenState extends State<AfterSplashScreen> {
+  bool isLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +17,7 @@ class AfterSplashScreen extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/man_exploring.jpg"),
+            image: AssetImage("assets/images/bg.jpg"),
             fit: BoxFit.cover,
           ),
         ),
@@ -78,21 +85,35 @@ class AfterSplashScreen extends StatelessWidget {
                             builder: (context) => const OnBoardingScreen()));
                   },
                   child: Container(
-                    height: 50,
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(32),
                     alignment: Alignment.center,
-                    width: MediaQuery.of(context).size.width / 2,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(50)),
-                      color: Colors.white,
-                    ),
-                    child: Text(
-                      'Get Started',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 24,
-                        fontWeight: FontWeight.normal,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        textStyle: TextStyle(fontSize: 24),
+                        minimumSize: Size.fromHeight(72),
+                        shape: StadiumBorder(),
                       ),
+                      child: isLoading
+                          ? const CircularProgressIndicator(
+                              color: Colors.white,
+                            )
+                          : const Text('Get Started'),
+                      onPressed: () async {
+                        if (isLoading) return;
+                        setState(() {
+                          isLoading = true;
+                        });
+                        await Future.delayed(const Duration(seconds: 5));
+                        setState(() {
+                          isLoading = false;
+                        });
+
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const OnBoardingScreen()));
+                      },
                     ),
                   ),
                 ),

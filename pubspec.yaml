@@ -64,6 +64,7 @@ flutter:
   assets:
     - assets/images/koteabby.jpg
     - assets/images/man_exploring.jpg
+    - assets/images/bg.jpg
     - assets/images/rock_climbing.png
 
   #   - images/a_dot_ham.jpeg
