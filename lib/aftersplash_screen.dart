@@ -89,6 +89,7 @@ class _AfterSplashScreenState extends State<AfterSplashScreen> {
                     alignment: Alignment.center,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
+                        primary: Colors.green,
                         textStyle: TextStyle(fontSize: 24),
                         minimumSize: Size.fromHeight(72),
                         shape: StadiumBorder(),
