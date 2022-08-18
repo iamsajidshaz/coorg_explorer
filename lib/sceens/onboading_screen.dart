@@ -1,11 +1,11 @@
-import 'package:coorg/introscreens/intro_page1.dart';
-import 'package:coorg/introscreens/intro_page2.dart';
-import 'package:coorg/introscreens/intro_page3.dart';
-import 'package:coorg/main_homescreen.dart';
+import 'package:coorg/sceens/introscreens/intro_page1.dart';
+import 'package:coorg/sceens/introscreens/intro_page2.dart';
+import 'package:coorg/sceens/introscreens/intro_page3.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'main_homescreen.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);

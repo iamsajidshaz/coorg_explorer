@@ -1,3 +1,4 @@
+import 'package:coorg/sceens/homepages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -18,8 +19,9 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
   }
 
   List listOfColors = [
+    const HomePage(),
     Container(
-        // color: Colors.w,
+        // color: Colors.yellow,
         ),
     Container(
         // color: Colors.yellow,
@@ -29,9 +31,6 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
         ),
     Container(
         //  color: Colors.redAccent,
-        ),
-    Container(
-        //   color: Colors.amber,
         ),
   ];
 

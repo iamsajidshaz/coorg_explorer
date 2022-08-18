@@ -1,4 +1,5 @@
-import 'package:coorg/onboading_screen.dart';
+import 'package:coorg/sceens/main_homescreen.dart';
+import 'package:coorg/sceens/privacy_policy_webpage.dart';
 import 'package:flutter/material.dart';
 
 class AfterSplashScreen extends StatefulWidget {
@@ -15,12 +16,12 @@ class _AfterSplashScreenState extends State<AfterSplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/images/bg.jpg"),
-            fit: BoxFit.cover,
-          ),
-        ),
+        // decoration: const BoxDecoration(
+        //   image: DecorationImage(
+        //     image: AssetImage("assets/images/bg.jpg"),
+        //     fit: BoxFit.cover,
+        //   ),
+        // ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -77,45 +78,36 @@ class _AfterSplashScreenState extends State<AfterSplashScreen> {
             Container(
               alignment: Alignment.center,
               child: Column(children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const OnBoardingScreen()));
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.all(32),
-                    alignment: Alignment.center,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.green,
-                        textStyle: TextStyle(fontSize: 24),
-                        minimumSize: Size.fromHeight(72),
-                        shape: StadiumBorder(),
-                      ),
-                      child: isLoading
-                          ? const CircularProgressIndicator(
-                              color: Colors.white,
-                            )
-                          : const Text('Get Started'),
-                      onPressed: () async {
-                        if (isLoading) return;
-                        setState(() {
-                          isLoading = true;
-                        });
-                        await Future.delayed(const Duration(seconds: 5));
-                        setState(() {
-                          isLoading = false;
-                        });
-
-                        Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const OnBoardingScreen()));
-                      },
+                Container(
+                  padding: const EdgeInsets.all(32),
+                  alignment: Alignment.center,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.green,
+                      textStyle: const TextStyle(fontSize: 24),
+                      minimumSize: const Size.fromHeight(72),
+                      shape: const StadiumBorder(),
                     ),
+                    child: isLoading
+                        ? const CircularProgressIndicator(
+                            color: Colors.white,
+                          )
+                        : const Text('Get Started'),
+                    onPressed: () async {
+                      if (isLoading) return;
+                      setState(() {
+                        isLoading = true;
+                      });
+                      await Future.delayed(const Duration(seconds: 5));
+                      setState(() {
+                        isLoading = false;
+                      });
+
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MainHomeScreen()));
+                    },
                   ),
                 ),
                 // ElevatedButton(
@@ -123,13 +115,22 @@ class _AfterSplashScreenState extends State<AfterSplashScreen> {
                 //   child: Text('Get Started ->'),
                 // ),
                 const SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
-                const Text(
-                  'Privacy Policy',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.normal,
+                GestureDetector(
+                  onTap: () {
+                    // open privacy policy page
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => WebViewExample()));
+                  },
+                  child: const Text(
+                    'Privacy Policy',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.normal,
+                    ),
                   ),
                 ),
               ]),

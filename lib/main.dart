@@ -1,8 +1,5 @@
 import 'dart:async';
-
-import 'package:coorg/aftersplash_screen.dart';
-import 'package:coorg/main_homescreen.dart';
-import 'package:coorg/onboading_screen.dart';
+import 'package:coorg/sceens/aftersplash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -59,28 +56,37 @@ class _SsplashScreenState extends State<SsplashScreen> {
 
   initScreen(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Text(
-              'COORG EXPLORER',
-              style: TextStyle(
-                color: Colors.green,
-                fontSize: 38,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/bg.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Text(
+                'COORG EXPLORER',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 50,
+                ),
               ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-              'Begin your Adventure',
-              style: TextStyle(
-                color: Colors.blueGrey,
-                fontSize: 16,
+              SizedBox(
+                height: 5,
               ),
-            ),
-          ],
+              Text(
+                'Begin your Adventure',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 15,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
