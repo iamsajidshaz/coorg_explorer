@@ -1,3 +1,4 @@
+import 'package:coorg/sceens/about_us.dart';
 import 'package:coorg/sceens/homepages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -26,12 +27,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
     Container(
         // color: Colors.yellow,
         ),
-    Container(
-        // color: Colors.blue,
-        ),
-    Container(
-        //  color: Colors.redAccent,
-        ),
+    AboutUs(),
   ];
 
   @override
@@ -40,10 +36,10 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
       body: listOfColors[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: FaIcon(Icons.home_filled),
-            label: '_',
-          ),
+          // BottomNavigationBarItem(
+          //   icon: FaIcon(Icons.home_filled),
+          //   label: '_',
+          // ),
           BottomNavigationBarItem(
             icon: FaIcon(Icons.explore),
             label: '_',
@@ -53,7 +49,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
             label: '_',
           ),
           BottomNavigationBarItem(
-            icon: FaIcon(Icons.favorite_outline),
+            icon: FaIcon(Icons.shopping_bag),
             label: '_',
           ),
           BottomNavigationBarItem(

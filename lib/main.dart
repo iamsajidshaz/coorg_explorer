@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:coorg/sceens/aftersplash_screen.dart';
+import 'package:coorg/sceens/main_homescreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Coorg Explorer',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -51,7 +52,7 @@ class _SsplashScreenState extends State<SsplashScreen> {
 
   route() {
     Navigator.pushReplacement(context,
-        MaterialPageRoute(builder: (context) => const AfterSplashScreen()));
+        MaterialPageRoute(builder: (context) => const MainHomeScreen()));
   }
 
   initScreen(BuildContext context) {

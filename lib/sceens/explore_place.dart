@@ -29,7 +29,7 @@ class ExplorePlace extends StatelessWidget {
                           facTwo: places['fac2'].toString(),
                           facThree: places['fac3'].toString(),
                           lat: places['lat'].toString(),
-                          lan: places['lan'].toString(),
+                          lang: places['lang'].toString(),
                           desc: places['desc'].toString(),
                         )),
               );

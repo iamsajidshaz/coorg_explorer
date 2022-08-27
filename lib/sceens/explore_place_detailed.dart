@@ -16,7 +16,7 @@ class DetailedPlace extends StatelessWidget {
       facThree,
       desc,
       lat,
-      lan;
+      lang;
   const DetailedPlace(
       {Key? key,
       required this.place,
@@ -30,7 +30,7 @@ class DetailedPlace extends StatelessWidget {
       required this.facThree,
       required this.desc,
       required this.lat,
-      required this.lan})
+      required this.lang})
       : super(key: key);
 
   @override
@@ -288,8 +288,8 @@ class DetailedPlace extends StatelessWidget {
                           shape: const StadiumBorder(),
                         ),
                         onPressed: () => MapsLauncher.launchCoordinates(
-                          double.parse(lat),
-                          double.parse(lan),
+                          double.parse(lat.toString()),
+                          double.parse(lang.toString()),
                           place,
                         ),
                         child: Text(
