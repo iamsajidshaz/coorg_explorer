@@ -16,12 +16,12 @@ class _AfterSplashScreenState extends State<AfterSplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        // decoration: const BoxDecoration(
-        //   image: DecorationImage(
-        //     image: AssetImage("assets/images/bg.jpg"),
-        //     fit: BoxFit.cover,
-        //   ),
-        // ),
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/backgroundimg.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,7 +38,7 @@ class _AfterSplashScreenState extends State<AfterSplashScreen> {
                 "It's a Big World",
                 textAlign: TextAlign.start,
                 style: TextStyle(
-                  color: Colors.black87,
+                  color: Colors.white,
                   fontSize: 34,
                   fontWeight: FontWeight.normal,
                 ),
@@ -53,7 +53,7 @@ class _AfterSplashScreenState extends State<AfterSplashScreen> {
                 "Out There,",
                 textAlign: TextAlign.start,
                 style: TextStyle(
-                  color: Colors.black87,
+                  color: Colors.white,
                   fontSize: 78,
                   fontWeight: FontWeight.normal,
                 ),
@@ -68,7 +68,7 @@ class _AfterSplashScreenState extends State<AfterSplashScreen> {
                 "Go Explore",
                 textAlign: TextAlign.start,
                 style: TextStyle(
-                  color: Colors.black87,
+                  color: Colors.white,
                   fontSize: 78,
                   fontWeight: FontWeight.normal,
                 ),
@@ -84,8 +84,8 @@ class _AfterSplashScreenState extends State<AfterSplashScreen> {
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       primary: Colors.green,
-                      textStyle: const TextStyle(fontSize: 24),
-                      minimumSize: const Size.fromHeight(72),
+                      textStyle: const TextStyle(fontSize: 20),
+                      minimumSize: const Size.fromHeight(50),
                       shape: const StadiumBorder(),
                     ),
                     child: isLoading
@@ -128,7 +128,7 @@ class _AfterSplashScreenState extends State<AfterSplashScreen> {
                   child: const Text(
                     'Privacy Policy',
                     style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontWeight: FontWeight.normal,
                     ),
                   ),

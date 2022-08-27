@@ -17,8 +17,13 @@ class WebViewExampleState extends State<WebViewExample> {
 
   @override
   Widget build(BuildContext context) {
-    return WebView(
-      initialUrl: 'https://iamsajidshazonline.000webhostapp.com/',
+    return SafeArea(
+      child: Scaffold(
+        body: WebView(
+          initialUrl:
+              'https://iamsajidshazonline.000webhostapp.com/coorgexpoimages/privacy_policy.html',
+        ),
+      ),
     );
   }
 }

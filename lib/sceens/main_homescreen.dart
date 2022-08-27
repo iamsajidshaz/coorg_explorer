@@ -61,9 +61,12 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
             label: '_',
           ),
         ],
+        showSelectedLabels: false,
+        type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.green,
         unselectedItemColor: Colors.grey,
+        showUnselectedLabels: false,
         onTap: _onItemTapped,
       ),
     );

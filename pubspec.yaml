@@ -42,6 +42,10 @@ dependencies:
   fluentui_icons: ^1.0.0
   gap: ^2.0.0
   get: 
+  url_launcher: ^6.1.5
+  maps_launcher: ^2.0.1
+  readmore: ^2.2.0
+
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +73,8 @@ flutter:
   assets:
     - assets/images/koteabby.jpg
     - assets/images/
+    - assets/images/coorg/
+    - assets/images/category/
     - assets/images/man_exploring.jpg
     - assets/images/bg.jpg
     - assets/images/rock_climbing.png

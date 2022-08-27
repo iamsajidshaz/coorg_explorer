@@ -1,28 +1,26 @@
 import 'package:coorg/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
-class CategoryPlace extends StatefulWidget {
-  const CategoryPlace({Key? key}) : super(key: key);
+class CategoryPlace extends StatelessWidget {
+  final Map<String, dynamic> pcategory;
+  const CategoryPlace({Key? key, required this.pcategory}) : super(key: key);
 
-  @override
-  State<CategoryPlace> createState() => _CategoryPlaceState();
-}
-
-class _CategoryPlaceState extends State<CategoryPlace> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
+    return Padding(
+      padding: EdgeInsets.all(8.0),
+      child: Column(children: [
         CircleAvatar(
-          radius: 50,
+          radius: 40,
           backgroundColor: Colors.red,
-          backgroundImage: AssetImage("assets/images/raja_seat.jpg"),
+          backgroundImage:
+              AssetImage("assets/images/category/${pcategory['image']}"),
         ),
         Text(
-          'Falls',
-          style: Styles.headLineStyle4.copyWith(color: Colors.black87),
+          pcategory['name'],
+          style: Styles.headLineStyle4.copyWith(color: Colors.black),
         ),
-      ],
+      ]),
     );
   }
 }

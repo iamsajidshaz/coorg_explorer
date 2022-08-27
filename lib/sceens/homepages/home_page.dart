@@ -1,9 +1,10 @@
 import 'package:coorg/sceens/category_place.dart';
 import 'package:coorg/sceens/explore_place.dart';
+import 'package:coorg/sceens/explore_place_detailed.dart';
+import 'package:coorg/utils/app_info_list.dart';
 import 'package:coorg/utils/app_styles.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 
 class HomePage extends StatelessWidget {
@@ -26,9 +27,10 @@ class HomePage extends StatelessWidget {
                   'Hi there',
                   style: TextStyle(fontSize: 28),
                 ),
-                FaIcon(
-                  Icons.person,
-                  size: 28,
+                CircleAvatar(
+                  radius: 24,
+                  backgroundColor: Colors.grey,
+                  backgroundImage: AssetImage("assets/images/person.jpg"),
                 ),
               ],
             ),
@@ -40,14 +42,14 @@ class HomePage extends StatelessWidget {
             margin: const EdgeInsets.only(left: 20),
             child: const Text(
               'Where do you want',
-              style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 46, fontWeight: FontWeight.bold),
             ),
           ),
           Container(
             margin: const EdgeInsets.only(left: 20),
             child: const Text(
               'to go?',
-              style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 46, fontWeight: FontWeight.bold),
             ),
           ),
           const Gap(10),
@@ -106,16 +108,9 @@ class HomePage extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.only(left: 20),
             child: Row(
-              children: [
-                ExplorePlace(),
-                const Gap(10),
-                ExplorePlace(),
-                const Gap(10),
-                ExplorePlace(),
-                const Gap(10),
-                ExplorePlace(),
-                const Gap(10),
-              ],
+              children: placeList
+                  .map((singlePlace) => ExplorePlace(places: singlePlace))
+                  .toList(),
             ),
           ),
 
@@ -148,23 +143,34 @@ class HomePage extends StatelessWidget {
 
           // category palces
           // explore places
+
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.only(left: 20),
             child: Row(
-              children: [
-                CategoryPlace(),
-                const Gap(10),
-                CategoryPlace(),
-                const Gap(10),
-                CategoryPlace(),
-                const Gap(10),
-                CategoryPlace(),
-                const Gap(10),
-                CategoryPlace(),
-              ],
+              children: categoryList
+                  .map((singleCategory) =>
+                      CategoryPlace(pcategory: singleCategory))
+                  .toList(),
             ),
           ),
+          // SingleChildScrollView(
+          //   scrollDirection: Axis.horizontal,
+          //   padding: const EdgeInsets.only(left: 20),
+          //   child: Row(
+          //     children: [
+          //       CategoryPlace(),
+          //       const Gap(10),
+          //       CategoryPlace(),
+          //       const Gap(10),
+          //       CategoryPlace(),
+          //       const Gap(10),
+          //       CategoryPlace(),
+          //       const Gap(10),
+          //       CategoryPlace(),
+          //     ],
+          //   ),
+          // ),
         ],
       ),
     );
