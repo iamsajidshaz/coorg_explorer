@@ -1,5 +1,6 @@
 import 'package:coorg/sceens/about_us.dart';
 import 'package:coorg/sceens/homepages/home_page.dart';
+import 'package:coorg/sceens/shop_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -24,9 +25,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
     Container(
         // color: Colors.yellow,
         ),
-    Container(
-        // color: Colors.yellow,
-        ),
+    ShopScreen(),
     AboutUs(),
   ];
 

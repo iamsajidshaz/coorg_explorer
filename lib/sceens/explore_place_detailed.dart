@@ -1,3 +1,4 @@
+import 'package:coorg/sceens/view_gallery_image.dart';
 import 'package:coorg/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -237,43 +238,73 @@ class DetailedPlace extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            height: 130,
-                            width: MediaQuery.of(context).size.width * .28,
-                            decoration: BoxDecoration(
-                                color: Colors.grey,
-                                image: DecorationImage(
-                                  image: NetworkImage(imageOne),
-                                  fit: BoxFit.cover,
-                                ),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(15))),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        ViewImage(imageUrl: imageOne)),
+                              );
+                            },
+                            child: Container(
+                              height: 130,
+                              width: MediaQuery.of(context).size.width * .28,
+                              decoration: BoxDecoration(
+                                  color: Colors.grey,
+                                  image: DecorationImage(
+                                    image: NetworkImage(imageOne),
+                                    fit: BoxFit.cover,
+                                  ),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(15))),
+                            ),
                           ),
-                          Container(
-                            height: 130,
-                            width: MediaQuery.of(context).size.width * .28,
-                            decoration: BoxDecoration(
-                                color: Colors.grey,
-                                image: DecorationImage(
-                                  image: NetworkImage(imageTwo),
-                                  // AssetImage(
-                                  //     "assets/images/coorg/abby.jpg"),
-                                  fit: BoxFit.cover,
-                                ),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(15))),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        ViewImage(imageUrl: imageTwo)),
+                              );
+                            },
+                            child: Container(
+                              height: 130,
+                              width: MediaQuery.of(context).size.width * .28,
+                              decoration: BoxDecoration(
+                                  color: Colors.grey,
+                                  image: DecorationImage(
+                                    image: NetworkImage(imageTwo),
+                                    // AssetImage(
+                                    //     "assets/images/coorg/abby.jpg"),
+                                    fit: BoxFit.cover,
+                                  ),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(15))),
+                            ),
                           ),
-                          Container(
-                            height: 130,
-                            width: MediaQuery.of(context).size.width * .28,
-                            decoration: BoxDecoration(
-                                color: Colors.grey,
-                                image: DecorationImage(
-                                  image: NetworkImage(imageThree),
-                                  fit: BoxFit.cover,
-                                ),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(15))),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        ViewImage(imageUrl: imageThree)),
+                              );
+                            },
+                            child: Container(
+                              height: 130,
+                              width: MediaQuery.of(context).size.width * .28,
+                              decoration: BoxDecoration(
+                                  color: Colors.grey,
+                                  image: DecorationImage(
+                                    image: NetworkImage(imageThree),
+                                    fit: BoxFit.cover,
+                                  ),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(15))),
+                            ),
                           ),
                         ],
                       ),

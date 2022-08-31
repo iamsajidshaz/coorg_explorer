@@ -40,10 +40,14 @@ class ExplorePlace extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.grey,
                 borderRadius: const BorderRadius.all(Radius.circular(10)),
-                image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: NetworkImage(places['image']),
-                ),
+                // image: DecorationImage(
+                //   fit: BoxFit.cover,
+                //   image: NetworkImage(places['image']),
+                // ),
+              ),
+              child: Image.network(
+                places['image'],
+                fit: BoxFit.cover,
               ),
             ),
           ),
